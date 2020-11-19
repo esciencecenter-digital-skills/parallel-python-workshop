@@ -21,7 +21,7 @@ def test_threading():
                 M += 1
         return 4 * M / N
 
-    ### We need to define a worker function that fetches jobs from the queue.
+    # We need to define a worker function that fetches jobs from the queue.
     def worker(q):
         while True:
             try:
@@ -30,12 +30,12 @@ def test_threading():
             except queue.Empty:
                 break
 
-    ### Create the queue, and fill it with input values
+    # Create the queue, and fill it with input values
     work_queue = queue.Queue()
     for i in input_range:
         work_queue.put(i)
 
-    ### Start a number of threads
+    # Start a number of threads
     threads = [
         threading.Thread(target=worker, args=(work_queue,))
         for i in range(ncpus)]
@@ -43,7 +43,7 @@ def test_threading():
     for t in threads:
         t.start()
 
-    ### Wait until all of them are done
+    # Wait until all of them are done
     for t in threads:
         t.join()
 

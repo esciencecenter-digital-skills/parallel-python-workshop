@@ -2,5 +2,6 @@ numpy>=1.19
 scipy>=1.5
 snakemake>=5.28
 dask[complete]>=2.20
-pytest>=6
 numba>=0.51
+pytest>=6
+pytest-flake8
