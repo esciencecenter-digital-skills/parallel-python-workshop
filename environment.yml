@@ -1,0 +1,5 @@
+name: parallel-python
+dependencies:
+  - python>=3.8
+  - pip:
+    - -r file:requirements.txt
