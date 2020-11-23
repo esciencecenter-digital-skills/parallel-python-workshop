@@ -1,5 +1,13 @@
 name: parallel-python
 dependencies:
   - python>=3.8
+  - pip>=20
+  - numba>=0.50
+  - numpy>=1.19
+  - scipy>=1.5
+  - dask[complete]>=2.20
+  - pytest>=6
   - pip:
-    - -r file:requirements.txt
+     - pytest-flake8
+     - snakemake>=5.28
+#     - -r file:requirements.txt

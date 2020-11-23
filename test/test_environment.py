@@ -11,4 +11,4 @@ def test_library_versions():
     assert version(scipy.__version__) >= version("1.5")
     assert version(dask.__version__) >= version("2.20")
     assert version(snakemake.__version__) >= version("5.28")
-    assert version(numba.__version__) >= version("0.51")
+    assert version(numba.__version__) >= version("0.50")
