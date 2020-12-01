@@ -1,0 +1,23 @@
+rule all:
+    input:
+        "combined.txt"
+
+rule combine:
+    input: "message.txt", "allcaps.txt"
+    output: "combined.txt"
+    shell:
+        "cat {input} > {output}"
+
+rule generate_message:
+    output:
+        "message.txt"
+    shell:
+        "echo 'Hello, World!' > {output}"
+
+rule shout_message:
+    input:
+        "message.txt"
+    output:
+        "allcaps.txt"
+    shell:
+        "tr [a-z] [A-Z] < {input} > {output}"
