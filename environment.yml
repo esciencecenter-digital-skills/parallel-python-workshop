@@ -12,6 +12,7 @@ dependencies:
   - pytest>=6
   - imagemagick
   - matplotlib
+  - graphviz
   - pip:
      - pytest-flake8
      - snakemake>=5.28
