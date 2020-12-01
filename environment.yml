@@ -1,4 +1,7 @@
 name: parallel-python
+channels:
+  - conda-forge
+  - defaults
 dependencies:
   - python>=3.8
   - pip>=20
@@ -7,6 +10,8 @@ dependencies:
   - scipy>=1.5
   - dask[complete]>=2.20
   - pytest>=6
+  - imagemagick
+  - matplotlib
   - pip:
      - pytest-flake8
      - snakemake>=5.28
