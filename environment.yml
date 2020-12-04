@@ -13,7 +13,9 @@ dependencies:
   - imagemagick
   - matplotlib
   - graphviz
+  - jupyterlab
   - pip:
      - pytest-flake8
      - snakemake>=5.28
+     - graphviz
 #     - -r file:requirements.txt
