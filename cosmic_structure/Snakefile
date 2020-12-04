@@ -10,7 +10,7 @@ def power_spectrum(k):
 box = Box(N=256, L=50.0)
 
 input_times = np.linspace(0.0, 4.0, num=10)
-timestamps = [str(round(t * 1000)) for t in input_times]
+# timestamps = [str(round(t * 1000)) for t in input_times]
 
 rule all:
     input:
@@ -39,7 +39,7 @@ rule plot_result:
     output:
         "data/plot_{timestamp}.png"
     run:
-        t = int(wildcards.timestamp) / 1000
+        t = input_times[int(wildcards.timestamp)]
         pot = np.load(input[0])
         structure = run_model(box, pot, t)
         fig, ax = plt.subplots(figsize=(12, 12))
@@ -50,8 +50,12 @@ rule plot_result:
 
 rule animated_gif:
     input:
-        expand("data/plot_{timestamp}.png", timestamp=timestamps)
+        expand("data/plot_{indices:03}.png", indices=range(len(input_times)))
     output:
         "data/plot_all.gif"
     shell:
-        "convert -delay 50 -loop 0 {input} {output}"
+        # convert -delay 50 -loop 0 {input} {output}   # not on windows
+        """
+        ffmpeg -i data/plot_%03d.png -vf "palettegen" data/palette.png
+        ffmpeg -framerate 3 -i data/plot_%03d.png -i data/palette.png -lavfi paletteuse {output}
+        """
