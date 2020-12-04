@@ -10,7 +10,8 @@ dependencies:
   - scipy>=1.5
   - dask[complete]>=2.20
   - pytest>=6
-  - imagemagick
+#  - imagemagick
+  - ffmpeg
   - matplotlib
   - graphviz
   - jupyterlab
