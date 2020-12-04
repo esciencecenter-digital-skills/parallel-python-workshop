@@ -1,5 +1,6 @@
 # parallel-python-workshop
 ![Python application](https://github.com/jhidding/parallel-python-workshop/workflows/Python%20application/badge.svg)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/escience-academy/parallel-python-workshop/HEAD)
 
 Environment for the Parallel Python workshop. Lesson material can be found on the [Software Carpentry Incubator](https://carpentries-incubator.github.io/lesson-parallel-python/)
 
