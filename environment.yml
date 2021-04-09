@@ -15,6 +15,7 @@ dependencies:
   - matplotlib
   - graphviz
   - jupyterlab
+  - nltk
   - pip:
      - pytest-flake8
      - snakemake>=5.28
