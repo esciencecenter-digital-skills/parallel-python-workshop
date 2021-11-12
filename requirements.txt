@@ -7,4 +7,6 @@ pytest>=6
 pytest-flake8
 graphviz
 jupyterlab
+memory_profiler
+h5py>=3.0
 
