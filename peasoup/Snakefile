@@ -1,0 +1,73 @@
+import random
+from pathlib import Path
+import textwrap
+
+
+def shuffle(x):
+    return random.sample(x, k=len(x))
+
+
+def mix(in_paths: list[Path], out_path: Path) -> None:
+    texts = [open(f).read() for f in in_paths]
+    words = [w for l in texts for w in l.split()]
+    mixed = " ".join(shuffle(words))
+    open(out_path, "w").write(textwrap.fill(mixed))
+
+
+def boil(in_path: Path, out_path: Path) -> None:
+    text = open(in_path).read()
+    boiled = "".join(shuffle(list(text)))
+    open(out_path, "w").write(textwrap.fill(boiled))
+
+
+def chop(in_path: Path, out_path: Path) -> None:
+    text = open(in_path).read()
+    chopped = " ".join(list(text))
+    open(out_path, "w").write(textwrap.fill(chopped))
+
+
+rule all:
+    input:
+        "pea-soup.txt"
+
+rule pea_soup:
+    input:
+        "protosoup.txt"
+    output:
+        "pea-soup.txt"
+    run:
+        boil(input[0], output[0])
+
+rule water_and_peas:
+    input:
+        "peas.txt",
+        "water.txt"
+    output:
+        "water-and-peas.txt"
+    run:
+        mix(input, output[0])
+
+rule boiled_peas:
+    input:
+        "water-and-peas.txt"
+    output:
+        "boiled-peas.txt"
+    run:
+        boil(input[0], output[0])
+
+rule chopped_vegetables:
+    input:
+        "vegetables.txt"
+    output:
+        "chopped-vegetables.txt"
+    run:
+        chop(input[0], output[0])
+
+rule protosoup:
+    input:
+        "chopped-vegetables.txt",
+        "boiled-peas.txt"
+    output:
+        "protosoup.txt"
+    run:
+        mix(input, output[0])

@@ -4,25 +4,21 @@
 
 Environment for the Parallel Python workshop. Lesson material can be found on the [Software Carpentry Incubator](https://carpentries-incubator.github.io/lesson-parallel-python/)
 
-## For conda users
+If the tests pass, your setup is good for the workshop.
 
-``` {.bash}
+### For conda users
+
+```bash
 conda env create -f environment.yml
 conda activate parallel-python
 pytest
 ```
 
-## Or
-Create a virtual environment and activate it.
+### Or use Poetry
 
-``` {.bash}
-virtualenv parallel-python
-parallel-python/bin/activate.sh
+```bash
+pip install --user poetry
+poetry install
+poetry run pytest
 ```
 
-Or better, use some `virtualenvwrapper` script; then,
-
-``` {.bash}
-pip install -r requirements.txt
-pytest
-```
