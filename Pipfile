@@ -8,9 +8,8 @@ numpy = ">=1.19"
 scipy = ">=1.5"
 snakemake = "==6"
 dask = {version = ">=2.20", extras = ["complete"]}
-numba = ">=0.51"
+numba = ">=0.55"
 pytest = ">=6"
-pytest-flake8 = "*"
 graphviz = "*"
 jupyterlab = "*"
 matplotlib = "*"
@@ -19,4 +18,4 @@ flask = "*"
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.10"

@@ -3,9 +3,9 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python>=3.8
+  - python>=3.10
   - pip>=20
-  - numba>=0.50
+  - numba>=0.55
   - numpy>=1.19
   - scipy>=1.5
   - dask[complete]>=2.20
@@ -17,7 +17,6 @@ dependencies:
   - jupyterlab
   - nltk
   - pip:
-     - pytest-flake8
      - snakemake>=5.28
      - graphviz
 #     - -r file:requirements.txt
