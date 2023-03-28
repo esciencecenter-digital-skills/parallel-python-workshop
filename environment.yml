@@ -1,23 +1,14 @@
 name: parallel-python
 channels:
-  - conda-forge
   - defaults
 dependencies:
-  - python>=3.8
-  - pip>=20
-  - numba>=0.50
-  - numpy>=1.19
-  - scipy>=1.5
-  - dask[complete]>=2.20
-  - pytest>=6
-#  - imagemagick
-  - ffmpeg
+  - python==3.10
+  - numba
+  - numpy
+  - scipy
+  - dask[complete]
+  - pytest
   - matplotlib
   - graphviz
   - jupyterlab
-  - nltk
-  - pip:
-     - pytest-flake8
-     - snakemake>=5.28
-     - graphviz
-#     - -r file:requirements.txt
+
