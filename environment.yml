@@ -9,6 +9,6 @@ dependencies:
   - dask[complete]
   - pytest
   - matplotlib
-  - graphviz
+  - python-graphviz
   - jupyterlab
 
