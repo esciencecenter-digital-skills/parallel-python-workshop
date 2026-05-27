@@ -2,7 +2,7 @@ name: parallel-python
 channels:
   - defaults
 dependencies:
-  - python==3.11
+  - python==3.14
   - numba
   - numpy
   - scipy
@@ -11,4 +11,11 @@ dependencies:
   - matplotlib
   - graphviz
   - jupyterlab
+  - polars
+  - xarray
+  - geopandas
+  - py-spy
+  - pip
+  - pip:
+    - memory-profiler
 
