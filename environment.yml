@@ -15,6 +15,7 @@ dependencies:
   - xarray
   - geopandas
   - py-spy
+  - pooch
   - pip
   - pip:
     - memory-profiler
