@@ -20,6 +20,9 @@ dependencies = [
     "xarray>=2026.4.0",
 ]
 
+[tool.setuptools]
+packages = []
+
 [tool.pytest]
 testpaths = ["test"]
 
