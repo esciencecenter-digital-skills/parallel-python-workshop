@@ -12,6 +12,7 @@ dependencies:
   - python-graphviz
   - jupyterlab
   - polars
+  - altair
   - xarray
   - geopandas
   - py-spy
